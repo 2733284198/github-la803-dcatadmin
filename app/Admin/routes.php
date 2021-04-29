@@ -3,6 +3,7 @@
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Dcat\Admin\Admin;
+use App\Admin\Controllers\ShopController;
 
 Admin::routes();
 
@@ -13,5 +14,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+
+    // 添加路由
+    $router->resource('/shops', 'ShopController');
 
 });
